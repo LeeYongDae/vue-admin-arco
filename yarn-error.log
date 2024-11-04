@@ -1,0 +1,113 @@
+Arguments: 
+  /Users/huyang/.nvm/versions/node/v16.16.0/bin/node /Users/huyang/.yarn/bin/yarn.js
+
+PATH: 
+  /Users/huyang/.yarn/bin:/Users/huyang/.config/yarn/global/node_modules/.bin:/Users/huyang/.nvm/versions/node/v16.16.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/huyang/.yarn/bin:/Users/huyang/.config/yarn/global/node_modules/.bin:/Users/huyang/.nvm/versions/node/v16.16.0/bin:/Users/huyang/Library/pnpm:/Users/huyang/Library/Application Support/JetBrains/Toolbox/scripts:/Users/huyang/Library/Application Support/JetBrains/Toolbox/scripts
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.16.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: http://nexus.kedacom.com/repository/public-npm/@arco-design%2fweb-vue: socket hang up
+      at connResetException (node:internal/errors:692:14)
+      at Socket.socketOnEnd (node:_http_client:478:23)
+      at Socket.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1345:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "vue-admin-arco",
+    "description": "",
+    "version": "1.0.1",
+    "private": true,
+    "author": "ArcoDesign Team",
+    "license": "MIT",
+    "scripts": {
+      "dev": "vite --config ./config/vite.config.dev.ts",
+      "build": "vue-tsc --noEmit --skipLibCheck && vite build --config ./config/vite.config.prod.ts",
+      "lint-staged": "npx lint-staged",
+      "prepare": "husky install",
+      "build:normal": "vite build --config ./config/vite.config.prod.ts",
+      "module:update": "ncu -u --reject vite-svg-loader,eslint --registry https://registry.npmmirror.com&&pnpm i",
+      "lint:eslint": "eslint . --fix",
+      "lint:prettier": "prettier . --write"
+    },
+    "dependencies": {
+      "@arco-design/web-vue": "^2.56.0",
+      "@types/mockjs": "^1.0.10",
+      "@vueuse/core": "^10.11.1",
+      "axios": "^1.7.3",
+      "dayjs": "^1.11.12",
+      "echarts": "^5.5.1",
+      "lodash": "^4.17.21",
+      "mitt": "^3.0.1",
+      "mockjs": "^1.1.0",
+      "nprogress": "^0.2.0",
+      "pinia": "^2.2.1",
+      "query-string": "^9.1.0",
+      "sortablejs": "^1.15.2",
+      "typescript": "^5.5.4",
+      "vue": "^3.4.37",
+      "vue-echarts": "^7.0.1",
+      "vue-i18n": "^9.13.1",
+      "vue-router": "4"
+    },
+    "devDependencies": {
+      "@arco-plugins/vite-vue": "^1.4.5",
+      "@commitlint/cli": "^19.4.0",
+      "@commitlint/config-conventional": "^19.2.2",
+      "@types/lodash": "^4.17.7",
+      "@types/mockjs": "^1.0.10",
+      "@types/nprogress": "^0.2.3",
+      "@types/sortablejs": "^1.15.8",
+      "@typescript-eslint/eslint-plugin": "^8.0.1",
+      "@typescript-eslint/parser": "^8.0.1",
+      "@vitejs/plugin-vue": "^5.1.2",
+      "@vitejs/plugin-vue-jsx": "^4.0.0",
+      "@vue/babel-plugin-jsx": "^1.2.2",
+      "consola": "^3.2.3",
+      "cross-env": "^7.0.3",
+      "eslint": "8.57.0",
+      "eslint-config-airbnb-base": "^15.0.0",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-import-resolver-typescript": "^3.6.1",
+      "eslint-plugin-import": "^2.29.1",
+      "eslint-plugin-prettier": "^5.2.1",
+      "eslint-plugin-vue": "^9.27.0",
+      "husky": "^9.1.4",
+      "less": "^4.2.0",
+      "lint-staged": "^15.2.8",
+      "mockjs": "^1.1.0",
+      "postcss-html": "^1.7.0",
+      "prettier": "^3.3.3",
+      "rollup": "^4.20.0",
+      "rollup-plugin-visualizer": "^5.12.0",
+      "stylelint": "^16.8.1",
+      "stylelint-config-prettier": "^9.0.5",
+      "stylelint-config-rational-order": "^0.1.2",
+      "stylelint-config-recommended-vue": "^1.5.0",
+      "stylelint-config-standard": "^36.0.1",
+      "stylelint-order": "^6.0.4",
+      "typescript": "^5.5.4",
+      "unplugin-vue-components": "^0.27.3",
+      "vite": "^5.4.0",
+      "vite-plugin-compression": "^0.5.1",
+      "vite-plugin-eslint": "^1.8.1",
+      "vite-plugin-imagemin": "^0.6.1",
+      "vite-svg-loader": "^4.0.0",
+      "vue-tsc": "^2.0.29"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
