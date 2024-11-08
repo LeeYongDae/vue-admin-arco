@@ -11,24 +11,6 @@
     </div>
     <ul class="right-side">
       <li>
-        <a-tooltip :content="'settings.search'">
-          <a-button class="nav-btn" type="outline" :shape="'circle'">
-            <template #icon>
-              <icon-search />
-            </template>
-          </a-button>
-        </a-tooltip>
-      </li>
-      <li>
-        <a-tooltip :content="'settings.language'">
-          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setDropDownVisible">
-            <template #icon>
-              <icon-language />
-            </template>
-          </a-button>
-        </a-tooltip>
-      </li>
-      <li>
         <a-tooltip :content="theme === 'light' ? 'settings.navbar.theme.toDark' : 'settings.navbar.theme.toLight'">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="handleToggleTheme">
             <template #icon>
@@ -193,7 +175,7 @@ const setVisible = () => {
   appStore.updateSettings({ globalSettings: true })
 }
 const refBtn = ref()
-const triggerBtn = ref()
+
 const setPopoverVisible = () => {
   const event = new MouseEvent('click', {
     view: window,
@@ -205,14 +187,7 @@ const setPopoverVisible = () => {
 const handleLogout = () => {
   logout()
 }
-const setDropDownVisible = () => {
-  const event = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: true,
-  })
-  triggerBtn.value.dispatchEvent(event)
-}
+
 const switchRoles = async () => {
   const res = await userStore.switchRoles()
   Message.success(res as string)
