@@ -1,7 +1,7 @@
 <template>
   <a-card
     class="general-card chat-panel"
-    :title="$t('monitor.title.chatPanel')"
+    :title="'monitor.title.chatPanel'"
     :bordered="false"
     :header-style="{ paddingBottom: '0' }"
     :body-style="{
@@ -14,10 +14,10 @@
     <a-space :size="8">
       <a-select style="width: 86px" default-value="all">
         <a-option value="all">
-          {{ $t('monitor.chat.options.all') }}
+          {{ 'monitor.chat.options.all' }}
         </a-option>
       </a-select>
-      <a-input-search :placeholder="$t('monitor.chat.placeholder.searchCategory')" />
+      <a-input-search :placeholder="'monitor.chat.placeholder.searchCategory'" />
       <a-button type="text">
         <icon-download />
       </a-button>
@@ -34,17 +34,17 @@
             <icon-face-smile-fill />
           </template>
         </a-Input>
-        <a-button type="primary">{{ $t('monitor.chat.update') }}</a-button>
+        <a-button type="primary">{{ 'monitor.chat.update' }}</a-button>
       </a-space>
     </div>
   </a-card>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { queryChatList, ChatRecord } from '@/api/message'
-import useLoading from '@/hooks/loading'
-import ChatList from './chat-list.vue'
+import { ChatRecord, queryChatList } from '@/api/message';
+import useLoading from '@/hooks/loading';
+import { ref } from 'vue';
+import ChatList from './chat-list.vue';
 
 const { loading, setLoading } = useLoading(true)
 const chatData = ref<ChatRecord[]>([])

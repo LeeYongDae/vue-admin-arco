@@ -2,16 +2,16 @@
   <div class="block">
     <h5 class="title">{{ title }}</h5>
     <div v-for="option in options" :key="option.name" class="switch-wrapper">
-      <span>{{ $t(option.name) }}</span>
+      <span>{{ option.name }}</span>
       <form-wrapper :type="option.type || 'switch'" :name="option.key" :default-value="option.defaultVal" @input-change="handleChange" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useAppStore } from '@/store'
-import { PropType } from 'vue'
-import FormWrapper from './form-wrapper.vue'
+import { useAppStore } from '@/store';
+import { PropType } from 'vue';
+import FormWrapper from './form-wrapper.vue';
 
 interface OptionsProps {
   name: string

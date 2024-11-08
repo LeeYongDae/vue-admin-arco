@@ -4,18 +4,18 @@
     <a-spin :loading="loading" style="width: 100%">
       <a-card class="general-card">
         <template #title>
-          {{ $t('stepForm.step.title') }}
+          {{ 'stepForm.step.title' }}
         </template>
         <div class="wrapper">
           <a-steps v-model:current="step" style="width: 580px" line-less class="steps">
-            <a-step :description="$t('stepForm.step.subTitle.baseInfo')">
-              {{ $t('stepForm.step.title.baseInfo') }}
+            <a-step :description="'stepForm.step.subTitle.baseInfo'">
+              {{ 'stepForm.step.title.baseInfo' }}
             </a-step>
-            <a-step :description="$t('stepForm.step.subTitle.channel')">
-              {{ $t('stepForm.step.title.channel') }}
+            <a-step :description="'stepForm.step.subTitle.channel'">
+              {{ 'stepForm.step.title.channel' }}
             </a-step>
-            <a-step :description="$t('stepForm.step.subTitle.finish')">
-              {{ $t('stepForm.step.title.finish') }}
+            <a-step :description="'stepForm.step.subTitle.finish'">
+              {{ 'stepForm.step.title.finish' }}
             </a-step>
           </a-steps>
           <keep-alive>
@@ -30,9 +30,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { BaseInfoModel, ChannelInfoModel, submitChannelForm, UnitChannelModel } from '@/api/form'
 import useLoading from '@/hooks/loading'
-import { submitChannelForm, BaseInfoModel, ChannelInfoModel, UnitChannelModel } from '@/api/form'
+import { ref } from 'vue'
 import BaseInfo from './components/base-info.vue'
 import ChannelInfo from './components/channel-info.vue'
 import Success from './components/success.vue'

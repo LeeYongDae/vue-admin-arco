@@ -11,8 +11,6 @@
 
 <br />
 
-[![stars](https://img.shields.io/github/stars/zxwk1998/vue-admin-arco?style=flat-square&logo=GitHub)](https://github.com/zxwk1998/vue-admin-arco)
-[![star](https://gitee.com/chu1204505056/vue-admin-arco/badge/star.svg?theme=gray)](https://gitee.com/chu1204505056/vue-admin-arco)
 [![license](https://img.shields.io/github/license/zxwk1998/vue-admin-arco?style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
 
 </div>
@@ -41,7 +39,6 @@
 - **Themes** - 基于「风格配置平台」丰富的主题市场，让你的项目千变万化。
 - **Dark Theme** - 一键丝滑切换暗黑风格
 - **Mock** - 内置 API 模拟方案
-- **I18n** - 内置国际化多语言解决方案
 - **Config** - 灵活配置页面配色、布局等
 
 ## ✨ 魔改内容

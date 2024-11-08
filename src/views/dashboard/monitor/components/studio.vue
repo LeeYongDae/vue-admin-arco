@@ -1,5 +1,5 @@
 <template>
-  <a-card class="general-card" :title="$t('monitor.title.studioPreview')">
+  <a-card class="general-card" :title="'monitor.title.studioPreview'">
     <template #extra>
       <icon-more />
     </template>
@@ -14,17 +14,17 @@
             <a-avatar :size="24">
               <img :src="userInfo.avatar" />
             </a-avatar>
-            <a-typography-text>{{ userInfo.name }} {{ $t('monitor.studioPreview.studio') }}</a-typography-text>
+            <a-typography-text>{{ userInfo.name }} {{ 'monitor.studioPreview.studio' }}</a-typography-text>
           </a-space>
         </div>
-        <a-typography-text type="secondary">36,000 {{ $t('monitor.studioPreview.watching') }}</a-typography-text>
+        <a-typography-text type="secondary">36,000 {{ 'monitor.studioPreview.watching' }}</a-typography-text>
       </div>
     </div>
   </a-card>
 </template>
 
 <script lang="ts" setup>
-import { useUserStore } from '@/store'
+import { useUserStore } from '@/store';
 
 const userInfo = useUserStore()
 </script>

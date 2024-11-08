@@ -1,7 +1,7 @@
 <template>
-  <a-card class="general-card" :title="$t('userInfo.title.latestActivity')">
+  <a-card class="general-card" :title="'userInfo.title.latestActivity'">
     <template #extra>
-      <a-link>{{ $t('userInfo.viewAll') }}</a-link>
+      <a-link>{{ 'userInfo.viewAll' }}</a-link>
     </template>
     <a-list :bordered="false">
       <a-list-item v-for="activity in activityList" :key="activity.id" action-layout="horizontal">
@@ -28,9 +28,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { queryLatestActivity, LatestActivity } from '@/api/user-center'
-import useLoading from '@/hooks/loading'
+import { LatestActivity, queryLatestActivity } from '@/api/user-center';
+import useLoading from '@/hooks/loading';
+import { ref } from 'vue';
 
 const { loading, setLoading } = useLoading(true)
 const activityList = ref<LatestActivity[]>(new Array(7).fill({}))

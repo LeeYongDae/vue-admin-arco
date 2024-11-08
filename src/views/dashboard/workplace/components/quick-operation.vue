@@ -1,12 +1,12 @@
 <template>
   <a-card
     class="general-card"
-    :title="$t('workplace.quick.operation')"
+    :title="'workplace.quick.operation'"
     :header-style="{ paddingBottom: '0' }"
     :body-style="{ padding: '24px 20px 0 20px' }"
   >
     <template #extra>
-      <a-link>{{ $t('workplace.quickOperation.setup') }}</a-link>
+      <a-link>{{ 'workplace.quickOperation.setup' }}</a-link>
     </template>
     <a-row :gutter="8">
       <a-col v-for="link in links" :key="link.text" :span="8" class="wrapper">
@@ -14,7 +14,7 @@
           <component :is="link.icon" />
         </div>
         <a-typography-paragraph class="text">
-          {{ $t(link.text) }}
+          {{ link.text }}
         </a-typography-paragraph>
       </a-col>
     </a-row>

@@ -2,7 +2,7 @@
   <a-spin :loading="loading" style="width: 100%">
     <a-card class="general-card" :header-style="{ paddingBottom: '16px' }">
       <template #title>
-        {{ $t('dataAnalysis.contentPeriodAnalysis') }}
+        {{ 'dataAnalysis.contentPeriodAnalysis' }}
       </template>
       <Chart style="width: 100%; height: 370px" :option="chartOption" />
     </a-card>
@@ -10,11 +10,11 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import useLoading from '@/hooks/loading'
 import { queryContentPeriodAnalysis } from '@/api/visualization'
-import { ToolTipFormatterParams } from '@/types/echarts'
 import useChartOption from '@/hooks/chart-option'
+import useLoading from '@/hooks/loading'
+import { ToolTipFormatterParams } from '@/types/echarts'
+import { ref } from 'vue'
 
 const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
   return items

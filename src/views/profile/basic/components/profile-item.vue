@@ -26,9 +26,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, PropType } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { ProfileBasicRes } from '@/api/profile'
+import { computed, PropType } from 'vue'
 
 type BlockList = {
   title: string
@@ -52,73 +51,73 @@ const props = defineProps({
     default: false,
   },
 })
-const { t } = useI18n()
+
 const blockDataList = computed<BlockList>(() => {
   const { renderData } = props
   const result = []
   result.push({
-    title: props.type === 'pre' ? t('basicProfile.title.preVideo') : t('basicProfile.title.video'),
+    title: props.type === 'pre' ? 'basicProfile.title.preVideo' : 'basicProfile.title.video',
     data: [
       {
-        label: t('basicProfile.label.video.mode'),
+        label: 'basicProfile.label.video.mode',
         value: renderData?.video?.mode || '-',
       },
       {
-        label: t('basicProfile.label.video.acquisition.resolution'),
+        label: 'basicProfile.label.video.acquisition.resolution',
         value: renderData?.video?.acquisition.resolution || '-',
       },
       {
-        label: t('basicProfile.label.video.acquisition.frameRate'),
+        label: 'basicProfile.label.video.acquisition.frameRate',
         value: `${renderData?.video?.acquisition.frameRate || '-'} fps`,
       },
       {
-        label: t('basicProfile.label.video.encoding.resolution'),
+        label: 'basicProfile.label.video.encoding.resolution',
         value: renderData?.video?.encoding.resolution || '-',
       },
       {
-        label: t('basicProfile.label.video.encoding.rate.min'),
+        label: 'basicProfile.label.video.encoding.rate.min',
         value: `${renderData?.video?.encoding.rate.min || '-'} bps`,
       },
       {
-        label: t('basicProfile.label.video.encoding.rate.max'),
+        label: 'basicProfile.label.video.encoding.rate.max',
         value: `${renderData?.video?.encoding.rate.max || '-'} bps`,
       },
       {
-        label: t('basicProfile.label.video.encoding.rate.default'),
+        label: 'basicProfile.label.video.encoding.rate.default',
         value: `${renderData?.video?.encoding.rate.default || '-'} bps`,
       },
       {
-        label: t('basicProfile.label.video.encoding.frameRate'),
+        label: 'basicProfile.label.video.encoding.frameRate',
         value: `${renderData?.video?.encoding.frameRate || '-'} fpx`,
       },
       {
-        label: t('basicProfile.label.video.encoding.profile'),
+        label: 'basicProfile.label.video.encoding.profile',
         value: renderData?.video?.encoding.profile || '-',
       },
     ],
   })
 
   result.push({
-    title: props.type === 'pre' ? t('basicProfile.title.preAudio') : t('basicProfile.title.audio'),
+    title: props.type === 'pre' ? 'basicProfile.title.preAudio' : 'basicProfile.title.audio',
     data: [
       {
-        label: t('basicProfile.label.audio.mode'),
+        label: 'basicProfile.label.audio.mode',
         value: renderData?.audio?.mode || '-',
       },
       {
-        label: t('basicProfile.label.audio.acquisition.channels'),
-        value: `${renderData?.audio?.acquisition.channels || '-'} ${t('basicProfile.unit.audio.channels')}`,
+        label: 'basicProfile.label.audio.acquisition.channels',
+        value: `${renderData?.audio?.acquisition.channels || '-'} ${'basicProfile.unit.audio.channels'}`,
       },
       {
-        label: t('basicProfile.label.audio.encoding.channels'),
-        value: `${renderData?.audio?.encoding.channels || '-'} ${t('basicProfile.unit.audio.channels')}`,
+        label: 'basicProfile.label.audio.encoding.channels',
+        value: `${renderData?.audio?.encoding.channels || '-'} ${'basicProfile.unit.audio.channels'}`,
       },
       {
-        label: t('basicProfile.label.audio.encoding.rate'),
+        label: 'basicProfile.label.audio.encoding.rate',
         value: `${renderData?.audio?.encoding.rate || '-'} kbps`,
       },
       {
-        label: t('basicProfile.label.audio.encoding.profile'),
+        label: 'basicProfile.label.audio.encoding.profile',
         value: renderData?.audio?.encoding.profile || '-',
       },
     ],

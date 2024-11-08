@@ -1,14 +1,14 @@
 <template>
   <a-spin :loading="loading" style="width: 100%">
-    <a-card class="general-card" :title="$t('multiDAnalysis.card.title.contentPublishingSource')">
+    <a-card class="general-card" :title="'multiDAnalysis.card.title.contentPublishingSource'">
       <Chart style="width: 100%; height: 300px" :option="chartOption" />
     </a-card>
   </a-spin>
 </template>
 
 <script lang="ts" setup>
-import useLoading from '@/hooks/loading'
-import useChartOption from '@/hooks/chart-option'
+import useChartOption from '@/hooks/chart-option';
+import useLoading from '@/hooks/loading';
 
 const { chartOption } = useChartOption((isDark) => {
   const graphicElementStyle = {

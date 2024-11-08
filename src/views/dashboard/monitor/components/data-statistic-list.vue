@@ -12,16 +12,15 @@
       :pagination="false"
     />
     <a-typography-text type="secondary" class="data-statistic-list-tip">
-      {{ $t('monitor.list.tip.rotations') }} {{ data.length }}
-      {{ $t('monitor.list.tip.rest') }}
+      {{ 'monitor.list.tip.rotations' }} {{ data.length }}
+      {{ 'monitor.list.tip.rest' }}
     </a-typography-text>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { computed, h, compile } from 'vue'
-import { useI18n } from 'vue-i18n'
-import type { TableColumnData, TableData } from '@arco-design/web-vue/es/table/interface.d'
+import type { TableColumnData, TableData } from '@arco-design/web-vue/es/table/interface.d';
+import { compile, computed, h } from 'vue';
 
 interface PreviewRecord {
   cover: string
@@ -30,7 +29,7 @@ interface PreviewRecord {
   id: string
   status: number
 }
-const { t } = useI18n()
+
 const data: PreviewRecord[] = [
   {
     cover: 'http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c788fc704d32cf3b1136c7d45afc2669.png~tplv-uwbnlip3yd-webp.webp',
@@ -43,7 +42,7 @@ const data: PreviewRecord[] = [
 const renderTag = (status: number) => {
   if (status === -1) {
     return `<a-tag  color="red" class='data-statistic-list-cover-tag'>
-            ${t('monitor.list.tag.auditFailed')}
+            ${'monitor.list.tag.auditFailed'}
         </a-tag>`
   }
   return ''
@@ -54,14 +53,14 @@ const renderTag = (status: number) => {
 const columns = computed(() => {
   return [
     {
-      title: t('monitor.list.title.order'),
+      title: 'monitor.list.title.order',
       render({ rowIndex }: { record: TableData; column: TableColumnData; rowIndex: number }) {
         const tmp = `<span>${rowIndex + 1}</span>`
         return h(compile(tmp))
       },
     },
     {
-      title: t('monitor.list.title.cover'),
+      title: 'monitor.list.title.cover',
       render({ record }: { record: TableData; column: TableColumnData; rowIndex: number }) {
         const tmp = `<div class='data-statistic-list-cover-wrapper'>
               <img src=${record.cover} />
@@ -71,16 +70,16 @@ const columns = computed(() => {
       },
     },
     {
-      title: t('monitor.list.title.name'),
+      title: 'monitor.list.title.name',
       dataIndex: 'name',
     },
     {
       dataIndex: 'duration',
-      title: t('monitor.list.title.duration'),
+      title: 'monitor.list.title.duration',
     },
     {
       dataIndex: 'id',
-      title: t('monitor.list.title.id'),
+      title: 'monitor.list.title.id',
     },
   ]
 })

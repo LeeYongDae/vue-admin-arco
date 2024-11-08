@@ -1,9 +1,9 @@
 {
-  "name": "vue-admin-arco",
+  "name": "admin",
   "description": "",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "private": true,
-  "author": "ArcoDesign Team",
+  "author": "summer hu",
   "license": "MIT",
   "scripts": {
     "dev": "vite --config ./config/vite.config.dev.ts",
@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@arco-design/web-vue": "^2.56.0",
-    "@types/mockjs": "^1.0.10",
     "@vueuse/core": "^10.11.1",
     "axios": "^1.7.3",
     "dayjs": "^1.11.12",
@@ -32,8 +31,7 @@
     "typescript": "^5.5.4",
     "vue": "^3.4.37",
     "vue-echarts": "^7.0.1",
-    "vue-i18n": "^9.13.1",
-    "vue-router": "4"
+    "vue-router": "^4.3.1"
   },
   "devDependencies": {
     "@arco-plugins/vite-vue": "^1.4.5",

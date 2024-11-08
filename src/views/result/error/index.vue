@@ -2,14 +2,14 @@
   <div class="container">
     <Breadcrumb :items="['menu.result', 'menu.result.error']" />
     <div class="wrapper">
-      <a-result class="result" status="error" :title="$t('error.result.title')" :subtitle="$t('error.result.subTitle')">
+      <a-result class="result" status="error" :title="'error.result.title'" :subtitle="'error.result.subTitle'">
         <template #extra>
           <a-space class="operation-wrap" :size="16">
             <a-button key="again" type="secondary">
-              {{ $t('error.result.goBack') }}
+              {{ 'error.result.goBack' }}
             </a-button>
             <a-button key="back" type="primary">
-              {{ $t('error.result.retry') }}
+              {{ 'error.result.retry' }}
             </a-button>
           </a-space>
         </template>
@@ -17,18 +17,18 @@
 
       <div class="details-wrapper">
         <a-typography-title :heading="6" style="margin-top: 0">
-          {{ $t('error.detailTitle') }}
+          {{ 'error.detailTitle' }}
         </a-typography-title>
         <a-typography-paragraph style="margin-bottom: 0">
           <ol>
             <li>
-              {{ $t('error.detailLine.record') }}
+              {{ 'error.detailLine.record' }}
               <a-link>
                 <IconLink />
-                {{ $t('error.detailLine.record.link') }}
+                {{ 'error.detailLine.record.link' }}
               </a-link>
             </li>
-            <li>{{ $t('error.detailLine.auth') }}</li>
+            <li>{{ 'error.detailLine.auth' }}</li>
           </ol>
         </a-typography-paragraph>
       </div>

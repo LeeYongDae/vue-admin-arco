@@ -1,16 +1,16 @@
 <template>
   <div class="login-form-wrapper">
-    <div class="login-form-title">{{ $t('login.form.title') }}</div>
-    <div class="login-form-sub-title">{{ $t('login.form.title') }}</div>
+    <div class="login-form-title">{{ '登录 Vue Admin Arco' }}</div>
+    <div class="login-form-sub-title">{{ '登录 Vue Admin Arco' }}</div>
     <div class="login-form-error-msg">{{ errorMessage }}</div>
     <a-form ref="loginForm" :model="userInfo" class="login-form" layout="vertical" @submit="handleSubmit">
       <a-form-item
         field="username"
-        :rules="[{ required: true, message: $t('login.form.userName.errMsg') }]"
+        :rules="[{ required: true, message: '用户名不能为空' }]"
         :validate-trigger="['change', 'blur']"
         hide-label
       >
-        <a-input v-model="userInfo.username" :placeholder="$t('login.form.userName.placeholder')">
+        <a-input v-model="userInfo.username" :placeholder="'用户名：admin'">
           <template #prefix>
             <icon-user />
           </template>
@@ -18,11 +18,11 @@
       </a-form-item>
       <a-form-item
         field="password"
-        :rules="[{ required: true, message: $t('login.form.password.errMsg') }]"
+        :rules="[{ required: true, message: '密码不能为空' }]"
         :validate-trigger="['change', 'blur']"
         hide-label
       >
-        <a-input-password v-model="userInfo.password" :placeholder="$t('login.form.password.placeholder')" allow-clear>
+        <a-input-password v-model="userInfo.password" :placeholder="'密码：admin'" allow-clear>
           <template #prefix>
             <icon-lock />
           </template>
@@ -31,15 +31,15 @@
       <a-space :size="16" direction="vertical">
         <div class="login-form-password-actions">
           <a-checkbox checked="rememberPassword" :model-value="loginConfig.rememberPassword" @change="setRememberPassword as any">
-            {{ $t('login.form.rememberPassword') }}
+            {{ '记住密码' }}
           </a-checkbox>
-          <a-link>{{ $t('login.form.forgetPassword') }}</a-link>
+          <a-link>{{ '忘记密码' }}</a-link>
         </div>
         <a-button type="primary" html-type="submit" long :loading="loading">
-          {{ $t('login.form.login') }}
+          {{ '登录' }}
         </a-button>
         <a-button type="text" long class="login-form-register-btn">
-          {{ $t('login.form.register') }}
+          {{ '注册账号' }}
         </a-button>
       </a-space>
     </a-form>
@@ -47,18 +47,16 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from 'vue'
-import { useRouter } from 'vue-router'
+import type { LoginData } from '@/api/user'
+import useLoading from '@/hooks/loading'
+import { useUserStore } from '@/store'
 import { Message } from '@arco-design/web-vue'
 import { ValidatedError } from '@arco-design/web-vue/es/form/interface'
-import { useI18n } from 'vue-i18n'
 import { useStorage } from '@vueuse/core'
-import { useUserStore } from '@/store'
-import useLoading from '@/hooks/loading'
-import type { LoginData } from '@/api/user'
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const { t } = useI18n()
 const errorMessage = ref('')
 const { loading, setLoading } = useLoading()
 const userStore = useUserStore()
@@ -86,7 +84,7 @@ const handleSubmit = async ({ errors, values }: { errors: Record<string, Validat
           ...othersQuery,
         },
       })
-      Message.success(t('login.form.login.success'))
+      Message.success('欢迎使用')
       const { rememberPassword } = loginConfig.value
       const { username, password } = values
       // 实际生产环境需要进行加密存储。

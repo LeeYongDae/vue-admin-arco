@@ -1,6 +1,6 @@
 <template>
   <a-spin :loading="loading" style="width: 100%">
-    <a-card class="general-card" :title="$t('multiDAnalysis.card.title.dataOverview')">
+    <a-card class="general-card" :title="'multiDAnalysis.card.title.dataOverview'">
       <a-row justify="space-between">
         <a-col v-for="(item, idx) in renderData" :key="idx" :span="6">
           <a-statistic :title="item.title" :value="item.value" show-group-separator :value-from="0" animation>
@@ -25,7 +25,6 @@ import useThemes from '@/hooks/themes'
 import { ToolTipFormatterParams } from '@/types/echarts'
 import { LineSeriesOption } from 'echarts'
 import { computed, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 
 const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
   return items
@@ -72,12 +71,12 @@ const generateSeries = (name: string, lineColor: string, itemBorderColor: string
     },
   }
 }
-const { t } = useI18n()
+
 const { loading, setLoading } = useLoading(true)
 const { isDark } = useThemes()
 const renderData = computed(() => [
   {
-    title: t('multiDAnalysis.dataOverview.contentProduction'),
+    title: 'multiDAnalysis.dataOverview.contentProduction',
     value: 1902,
     prefix: {
       icon: 'icon-edit',
@@ -86,7 +85,7 @@ const renderData = computed(() => [
     },
   },
   {
-    title: t('multiDAnalysis.dataOverview.contentClick'),
+    title: 'multiDAnalysis.dataOverview.contentClick',
     value: 2445,
     prefix: {
       icon: 'icon-thumb-up',
@@ -95,7 +94,7 @@ const renderData = computed(() => [
     },
   },
   {
-    title: t('multiDAnalysis.dataOverview.contentExposure'),
+    title: 'multiDAnalysis.dataOverview.contentExposure',
     value: 3034,
     prefix: {
       icon: 'icon-heart',
@@ -104,7 +103,7 @@ const renderData = computed(() => [
     },
   },
   {
-    title: t('multiDAnalysis.dataOverview.activeUsers'),
+    title: 'multiDAnalysis.dataOverview.activeUsers',
     value: 1275,
     prefix: {
       icon: 'icon-user',

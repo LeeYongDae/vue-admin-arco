@@ -1,18 +1,18 @@
 <template>
-  <a-card class="general-card" :title="$t('userInfo.title.latestNotification')">
+  <a-card class="general-card" :title="'userInfo.title.latestNotification'">
     <a-skeleton v-if="loading" :animation="true">
       <a-skeleton-line :rows="3" />
     </a-skeleton>
     <a-result v-else status="404">
       <template #subtitle>
-        {{ $t('userInfo.nodata') }}
+        {{ 'userInfo.nodata' }}
       </template>
     </a-result>
   </a-card>
 </template>
 
 <script lang="ts" setup>
-import useLoading from '@/hooks/loading'
+import useLoading from '@/hooks/loading';
 
 const { loading, setLoading } = useLoading(true)
 setTimeout(() => {

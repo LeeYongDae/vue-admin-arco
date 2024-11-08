@@ -1,11 +1,11 @@
 <template>
-  <a-card class="general-card" :title="$t('multiDAnalysis.card.title.userActions')">
+  <a-card class="general-card" :title="'multiDAnalysis.card.title.userActions'">
     <Chart height="122px" :option="chartOption" />
   </a-card>
 </template>
 
 <script lang="ts" setup>
-import useChartOption from '@/hooks/chart-option'
+import useChartOption from '@/hooks/chart-option';
 
 const { chartOption } = useChartOption((isDark) => {
   return {

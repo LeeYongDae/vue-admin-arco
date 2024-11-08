@@ -1,9 +1,9 @@
 <template>
-  <a-card class="general-card" :title="$t('dataAnalysis.title.publicOpinion')" :header-style="{ paddingBottom: '12px' }">
+  <a-card class="general-card" :title="'dataAnalysis.title.publicOpinion'" :header-style="{ paddingBottom: '12px' }">
     <a-grid :cols="24" :col-gap="12" :row-gap="12">
       <a-grid-item :span="{ xs: 12, sm: 12, md: 12, lg: 12, xl: 6, xxl: 6 }">
         <ChainItem
-          :title="$t('dataAnalysis.card.title.allVisitors')"
+          :title="'dataAnalysis.card.title.allVisitors'"
           quota="visitors"
           chart-type="line"
           :card-style="{
@@ -13,7 +13,7 @@
       </a-grid-item>
       <a-grid-item :span="{ xs: 12, sm: 12, md: 12, lg: 12, xl: 6, xxl: 6 }">
         <ChainItem
-          :title="$t('dataAnalysis.card.title.contentPublished')"
+          :title="'dataAnalysis.card.title.contentPublished'"
           quota="published"
           chart-type="bar"
           :card-style="{
@@ -23,7 +23,7 @@
       </a-grid-item>
       <a-grid-item :span="{ xs: 12, sm: 12, md: 12, lg: 12, xl: 6, xxl: 6 }">
         <ChainItem
-          :title="$t('dataAnalysis.card.title.totalComment')"
+          :title="'dataAnalysis.card.title.totalComment'"
           quota="comment"
           chart-type="line"
           :card-style="{
@@ -33,7 +33,7 @@
       </a-grid-item>
       <a-grid-item :span="{ xs: 12, sm: 12, md: 12, lg: 12, xl: 6, xxl: 6 }">
         <ChainItem
-          :title="$t('dataAnalysis.card.title.totalShare')"
+          :title="'dataAnalysis.card.title.totalShare'"
           quota="share"
           chart-type="pie"
           :card-style="{
@@ -46,8 +46,8 @@
 </template>
 
 <script lang="ts" setup>
-import useThemes from '@/hooks/themes'
-import ChainItem from './chain-item.vue'
+import useThemes from '@/hooks/themes';
+import ChainItem from './chain-item.vue';
 
 const { isDark } = useThemes()
 </script>

@@ -1,21 +1,21 @@
 <template>
   <div class="success-wrap">
-    <a-result status="success" :title="$t('stepForm.success.title')" :subtitle="$t('stepForm.success.subTitle')" />
+    <a-result status="success" :title="'stepForm.success.title'" :subtitle="'stepForm.success.subTitle'" />
     <a-space :size="16">
       <a-button key="view" type="primary">
-        {{ $t('stepForm.button.view') }}
+        {{ 'stepForm.button.view' }}
       </a-button>
       <a-button key="again" type="secondary" @click="oneMore">
-        {{ $t('stepForm.button.again') }}
+        {{ 'stepForm.button.again' }}
       </a-button>
     </a-space>
     <div class="details-wrapper">
       <a-typography-title :heading="6" style="margin-top: 0">
-        {{ $t('stepForm.form.description.title') }}
+        {{ 'stepForm.form.description.title' }}
       </a-typography-title>
       <a-typography-paragraph style="margin-bottom: 0">
-        {{ $t('stepForm.form.description.text') }}
-        <a-link href="link">{{ $t('stepForm.button.view') }}</a-link>
+        {{ 'stepForm.form.description.text' }}
+        <a-link href="link">{{ 'stepForm.button.view' }}</a-link>
       </a-typography-paragraph>
     </div>
   </div>

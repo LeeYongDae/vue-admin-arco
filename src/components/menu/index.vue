@@ -4,7 +4,6 @@ import { useAppStore } from '@/store'
 import { openWindow, regexUrl } from '@/utils'
 import { listenerRouteChange } from '@/utils/route-listener'
 import { compile, computed, defineComponent, h, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 import type { RouteMeta } from 'vue-router'
 import { RouteRecordRaw, useRoute, useRouter } from 'vue-router'
 import useMenuTree from './use-menu-tree'
@@ -12,7 +11,6 @@ import useMenuTree from './use-menu-tree'
 export default defineComponent({
   emit: ['collapse'],
   setup() {
-    const { t } = useI18n()
     const appStore = useAppStore()
     const router = useRouter()
     const route = useRoute()
@@ -49,6 +47,7 @@ export default defineComponent({
         name: item.name,
       })
     }
+
     const findMenuOpenKeys = (target: string) => {
       const result: string[] = []
       let isFind = false
@@ -70,6 +69,7 @@ export default defineComponent({
       })
       return result
     }
+
     listenerRouteChange((newRoute) => {
       const { requiresAuth, activeMenu, hideInMenu } = newRoute.meta
       if (requiresAuth && (!hideInMenu || activeMenu)) {
@@ -81,6 +81,7 @@ export default defineComponent({
         selectedKey.value = [activeMenu || menuOpenKeys[menuOpenKeys.length - 1]]
       }
     }, true)
+
     const setCollapse = (val: boolean) => {
       if (appStore.device === 'desktop') appStore.updateSettings({ menuCollapse: val })
     }
@@ -97,14 +98,14 @@ export default defineComponent({
                   key={element?.name}
                   v-slots={{
                     icon,
-                    title: () => h(compile(t(element?.meta?.locale || ''))),
+                    title: () => h(compile(element?.meta?.locale || '')),
                   }}
                 >
                   {travel(element?.children)}
                 </a-sub-menu>
               ) : (
                 <a-menu-item key={element?.name} v-slots={{ icon }} onClick={() => goto(element)}>
-                  {t(element?.meta?.locale || '')}
+                  {element?.meta?.locale || ''}
                 </a-menu-item>
               )
             nodes.push(node as never)

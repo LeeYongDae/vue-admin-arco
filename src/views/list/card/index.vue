@@ -3,28 +3,28 @@
     <Breadcrumb :items="['menu.list', 'menu.list.cardList']" />
     <a-row :gutter="20" align="stretch">
       <a-col :span="24">
-        <a-card class="general-card" :title="$t('menu.list.cardList')">
+        <a-card class="general-card" :title="'menu.list.cardList'">
           <a-row justify="space-between">
             <a-col :span="24">
               <a-tabs :default-active-tab="1" type="rounded">
-                <a-tab-pane key="1" :title="$t('cardList.tab.title.all')">
+                <a-tab-pane key="1" :title="'cardList.tab.title.all'">
                   <QualityInspection />
                   <TheService />
                   <RulesPreset />
                 </a-tab-pane>
-                <a-tab-pane key="2" :title="$t('cardList.tab.title.content')">
+                <a-tab-pane key="2" :title="'cardList.tab.title.content'">
                   <QualityInspection />
                 </a-tab-pane>
-                <a-tab-pane key="3" :title="$t('cardList.tab.title.service')">
+                <a-tab-pane key="3" :title="'cardList.tab.title.service'">
                   <TheService />
                 </a-tab-pane>
-                <a-tab-pane key="4" :title="$t('cardList.tab.title.preset')">
+                <a-tab-pane key="4" :title="'cardList.tab.title.preset'">
                   <RulesPreset />
                 </a-tab-pane>
               </a-tabs>
             </a-col>
             <a-input-search
-              :placeholder="$t('cardList.searchInput.placeholder')"
+              :placeholder="'cardList.searchInput.placeholder'"
               style="width: 240px; position: absolute; top: 60px; right: 20px"
             />
           </a-row>
@@ -35,9 +35,9 @@
 </template>
 
 <script lang="ts" setup>
-import QualityInspection from './components/quality-inspection.vue'
-import TheService from './components/the-service.vue'
-import RulesPreset from './components/rules-preset.vue'
+import QualityInspection from './components/quality-inspection.vue';
+import RulesPreset from './components/rules-preset.vue';
+import TheService from './components/the-service.vue';
 </script>
 
 <script lang="ts">

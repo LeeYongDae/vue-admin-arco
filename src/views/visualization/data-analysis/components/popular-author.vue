@@ -2,24 +2,24 @@
   <a-spin :loading="loading" style="width: 100%">
     <a-card class="general-card" :header-style="{ paddingBottom: '14px' }">
       <template #title>
-        {{ $t('dataAnalysis.popularAuthor') }}
+        {{ 'dataAnalysis.popularAuthor' }}
       </template>
       <template #extra>
-        <a-link>{{ $t('workplace.viewMore') }}</a-link>
+        <a-link>{{ 'workplace.viewMore' }}</a-link>
       </template>
       <a-table :data="tableData.list" :pagination="false" :bordered="false" style="margin-bottom: 20px" :scroll="{ x: '100%', y: '350px' }">
         <template #columns>
-          <a-table-column :title="$t('dataAnalysis.popularAuthor.column.ranking')" data-index="ranking"></a-table-column>
-          <a-table-column :title="$t('dataAnalysis.popularAuthor.column.author')" data-index="author"></a-table-column>
+          <a-table-column :title="'dataAnalysis.popularAuthor.column.ranking'" data-index="ranking"></a-table-column>
+          <a-table-column :title="'dataAnalysis.popularAuthor.column.author'" data-index="author"></a-table-column>
           <a-table-column
-            :title="$t('dataAnalysis.popularAuthor.column.content')"
+            :title="'dataAnalysis.popularAuthor.column.content'"
             data-index="contentCount"
             :sortable="{
               sortDirections: ['ascend', 'descend'],
             }"
           ></a-table-column>
           <a-table-column
-            :title="$t('dataAnalysis.popularAuthor.column.click')"
+            :title="'dataAnalysis.popularAuthor.column.click'"
             data-index="clickCount"
             :sortable="{
               sortDirections: ['ascend', 'descend'],
@@ -32,9 +32,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import useLoading from '@/hooks/loading'
-import { queryPopularAuthor, PopularAuthorRes } from '@/api/visualization'
+import { PopularAuthorRes, queryPopularAuthor } from '@/api/visualization';
+import useLoading from '@/hooks/loading';
+import { ref } from 'vue';
 
 const { loading, setLoading } = useLoading()
 const tableData = ref<PopularAuthorRes>({ list: [] })

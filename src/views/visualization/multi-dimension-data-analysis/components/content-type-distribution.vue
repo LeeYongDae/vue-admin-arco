@@ -1,11 +1,11 @@
 <template>
-  <a-card class="general-card" :title="$t('multiDAnalysis.card.title.contentTypeDistribution')" :header-style="{ paddingBottom: 0 }">
+  <a-card class="general-card" :title="'multiDAnalysis.card.title.contentTypeDistribution'" :header-style="{ paddingBottom: 0 }">
     <Chart style="height: 222px" :option="chartOption" />
   </a-card>
 </template>
 
 <script lang="ts" setup>
-import useChartOption from '@/hooks/chart-option'
+import useChartOption from '@/hooks/chart-option';
 
 const { chartOption } = useChartOption((isDark) => {
   return {

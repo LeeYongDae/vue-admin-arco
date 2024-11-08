@@ -8,7 +8,7 @@
       }"
     >
       <template #title>
-        {{ $t('workplace.categoriesPercent') }}
+        {{ 'workplace.categoriesPercent' }}
       </template>
       <Chart height="310px" :option="chartOption" />
     </a-card>
@@ -16,8 +16,8 @@
 </template>
 
 <script lang="ts" setup>
-import useLoading from '@/hooks/loading'
-import useChartOption from '@/hooks/chart-option'
+import useChartOption from '@/hooks/chart-option';
+import useLoading from '@/hooks/loading';
 
 const { loading } = useLoading()
 const { chartOption } = useChartOption((isDark) => {

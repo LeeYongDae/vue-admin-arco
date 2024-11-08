@@ -2,10 +2,10 @@
   <a-spin :loading="loading" style="width: 100%">
     <a-card class="general-card" :header-style="{ paddingBottom: '14px' }">
       <template #title>
-        {{ $t('dataAnalysis.contentPublishRatio') }}
+        {{ 'dataAnalysis.contentPublishRatio' }}
       </template>
       <template #extra>
-        <a-link>{{ $t('workplace.viewMore') }}</a-link>
+        <a-link>{{ 'workplace.viewMore' }}</a-link>
       </template>
       <Chart style="width: 100%; height: 347px" :option="chartOption" />
     </a-card>
@@ -13,11 +13,11 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { ToolTipFormatterParams } from '@/types/echarts'
-import useLoading from '@/hooks/loading'
-import { queryContentPublish, ContentPublishRecord } from '@/api/visualization'
+import { ContentPublishRecord, queryContentPublish } from '@/api/visualization'
 import useChartOption from '@/hooks/chart-option'
+import useLoading from '@/hooks/loading'
+import { ToolTipFormatterParams } from '@/types/echarts'
+import { ref } from 'vue'
 
 const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
   return items

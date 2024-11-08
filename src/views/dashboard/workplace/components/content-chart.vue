@@ -6,10 +6,10 @@
       :body-style="{
         paddingTop: '20px',
       }"
-      :title="$t('workplace.contentData')"
+      :title="'workplace.contentData'"
     >
       <template #extra>
-        <a-link>{{ $t('workplace.viewMore') }}</a-link>
+        <a-link>{{ 'workplace.viewMore' }}</a-link>
       </template>
       <Chart height="289px" :option="chartOption" />
     </a-card>
@@ -17,13 +17,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { graphic } from 'echarts'
-import useLoading from '@/hooks/loading'
-import { queryContentData, ContentDataRecord } from '@/api/dashboard'
+import { ContentDataRecord, queryContentData } from '@/api/dashboard'
 import useChartOption from '@/hooks/chart-option'
+import useLoading from '@/hooks/loading'
 import { ToolTipFormatterParams } from '@/types/echarts'
 import { AnyObject } from '@/types/global'
+import { graphic } from 'echarts'
+import { ref } from 'vue'
 
 function graphicFactory(side: AnyObject) {
   return {

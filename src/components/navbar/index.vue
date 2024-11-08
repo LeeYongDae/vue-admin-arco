@@ -11,7 +11,7 @@
     </div>
     <ul class="right-side">
       <li>
-        <a-tooltip :content="$t('settings.search')">
+        <a-tooltip :content="'settings.search'">
           <a-button class="nav-btn" type="outline" :shape="'circle'">
             <template #icon>
               <icon-search />
@@ -20,27 +20,16 @@
         </a-tooltip>
       </li>
       <li>
-        <a-tooltip :content="$t('settings.language')">
+        <a-tooltip :content="'settings.language'">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setDropDownVisible">
             <template #icon>
               <icon-language />
             </template>
           </a-button>
         </a-tooltip>
-        <a-dropdown trigger="click" @select="changeLocale as any">
-          <div ref="triggerBtn" class="trigger-btn"></div>
-          <template #content>
-            <a-doption v-for="item in locales" :key="item.value" :value="item.value">
-              <template #icon>
-                <icon-check v-show="item.value === currentLocale" />
-              </template>
-              {{ item.label }}
-            </a-doption>
-          </template>
-        </a-dropdown>
       </li>
       <li>
-        <a-tooltip :content="theme === 'light' ? $t('settings.navbar.theme.toDark') : $t('settings.navbar.theme.toLight')">
+        <a-tooltip :content="theme === 'light' ? 'settings.navbar.theme.toDark' : 'settings.navbar.theme.toLight'">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="handleToggleTheme">
             <template #icon>
               <icon-moon-fill v-if="theme === 'dark'" />
@@ -50,7 +39,7 @@
         </a-tooltip>
       </li>
       <li>
-        <a-tooltip :content="$t('settings.navbar.alerts')">
+        <a-tooltip :content="'settings.navbar.alerts'">
           <div class="message-box-trigger">
             <a-badge :count="9" dot>
               <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setPopoverVisible">
@@ -72,7 +61,7 @@
         </a-popover>
       </li>
       <li>
-        <a-tooltip :content="isFullscreen ? $t('settings.navbar.screen.toExit') : $t('settings.navbar.screen.toFull')">
+        <a-tooltip :content="isFullscreen ? 'settings.navbar.screen.toExit' : 'settings.navbar.screen.toFull'">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="toggleFullScreen">
             <template #icon>
               <icon-fullscreen-exit v-if="isFullscreen" />
@@ -82,7 +71,7 @@
         </a-tooltip>
       </li>
       <li>
-        <a-tooltip :content="$t('settings.title')">
+        <a-tooltip :content="'settings.title'">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setVisible">
             <template #icon>
               <icon-settings />
@@ -106,7 +95,7 @@
               <a-space @click="switchRoles">
                 <icon-tag />
                 <span>
-                  {{ $t('messageBox.switchRoles') }}
+                  {{ 'messageBox.switchRoles' }}
                 </span>
               </a-space>
             </a-doption>
@@ -114,7 +103,7 @@
               <a-space @click="$router.push({ name: 'info' })">
                 <icon-user />
                 <span>
-                  {{ $t('messageBox.userCenter') }}
+                  {{ 'messageBox.userCenter' }}
                 </span>
               </a-space>
             </a-doption>
@@ -122,7 +111,7 @@
               <a-space @click="$router.push({ name: 'setting' })">
                 <icon-settings />
                 <span>
-                  {{ $t('messageBox.userSettings') }}
+                  {{ 'messageBox.userSettings' }}
                 </span>
               </a-space>
             </a-doption>
@@ -154,7 +143,7 @@
               <a-space @click="handleLogout">
                 <icon-export />
                 <span>
-                  {{ $t('messageBox.logout') }}
+                  {{ 'messageBox.logout' }}
                 </span>
               </a-space>
             </a-doption>
@@ -166,9 +155,7 @@
 </template>
 
 <script lang="ts" setup>
-import useLocale from '@/hooks/locale'
 import useUser from '@/hooks/user'
-import { LOCALE_OPTIONS } from '@/locale'
 import { useAppStore, useUserStore } from '@/store'
 import { Message } from '@arco-design/web-vue'
 import { useDark, useFullscreen, useToggle } from '@vueuse/core'
@@ -178,9 +165,8 @@ import MessageBox from '../message-box/index.vue'
 const appStore = useAppStore()
 const userStore = useUserStore()
 const { logout } = useUser()
-const { changeLocale, currentLocale }: any = useLocale()
+
 const { isFullscreen, toggle: toggleFullScreen } = useFullscreen()
-const locales = [...LOCALE_OPTIONS]
 const avatar = computed(() => {
   return userStore.avatar
 })

@@ -6,7 +6,7 @@
           <a-statistic :title="title" :value="renderData.count" :value-from="0" animation show-group-separator />
           <div class="desc">
             <a-typography-text type="secondary" class="label">
-              {{ $t('dataAnalysis.card.yesterday') }}
+              {{ 'dataAnalysis.card.yesterday' }}
             </a-typography-text>
             <a-typography-text type="danger">
               {{ renderData.growth }}
@@ -23,10 +23,10 @@
 </template>
 
 <script lang="ts" setup>
-import { PublicOpinionAnalysis, PublicOpinionAnalysisRes, queryPublicOpinionAnalysis } from '@/api/visualization'
-import useChartOption from '@/hooks/chart-option'
-import useLoading from '@/hooks/loading'
-import { CSSProperties, PropType, ref } from 'vue'
+import { PublicOpinionAnalysis, PublicOpinionAnalysisRes, queryPublicOpinionAnalysis } from '@/api/visualization';
+import useChartOption from '@/hooks/chart-option';
+import useLoading from '@/hooks/loading';
+import { CSSProperties, PropType, ref } from 'vue';
 
 const barChartOptionsFactory = () => {
   const data = ref<any>([])

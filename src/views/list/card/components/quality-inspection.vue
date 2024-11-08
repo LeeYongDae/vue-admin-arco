@@ -1,13 +1,13 @@
 <template>
   <div class="list-wrap">
     <a-typography-title class="block-title" :heading="6">
-      {{ $t('cardList.tab.title.content') }}
+      {{ 'cardList.tab.title.content' }}
     </a-typography-title>
     <a-row class="list-row" :gutter="24">
       <a-col :xs="12" :sm="12" :md="12" :lg="6" :xl="6" :xxl="6" class="list-col">
         <div class="card-wrap empty-wrap">
           <a-card :bordered="false" hoverable>
-            <a-result :status="null" :title="$t('cardList.content.action')">
+            <a-result :status="null" :title="'cardList.content.action'">
               <template #icon>
                 <icon-plus style="font-size: 20px" />
               </template>
@@ -23,8 +23,8 @@
           :default-value="item.enable"
           :action-type="item.actionType"
           :icon="item.icon"
-          :open-txt="$t('cardList.content.inspection')"
-          :close-txt="$t('cardList.content.delete')"
+          :open-txt="'cardList.content.inspection'"
+          :close-txt="'cardList.content.delete'"
           :show-tag="false"
         >
           <a-descriptions style="margin-top: 16px" :data="item.data" layout="inline-horizontal" :column="2" />
@@ -41,9 +41,9 @@
 </template>
 
 <script lang="ts" setup>
-import { queryInspectionList, ServiceRecord } from '@/api/list'
-import useRequest from '@/hooks/request'
-import CardWrap from './card-wrap.vue'
+import { queryInspectionList, ServiceRecord } from '@/api/list';
+import useRequest from '@/hooks/request';
+import CardWrap from './card-wrap.vue';
 
 const defaultValue: ServiceRecord[] = new Array(3).fill({})
 const { loading, response: renderData } = useRequest<ServiceRecord[]>(queryInspectionList, defaultValue)

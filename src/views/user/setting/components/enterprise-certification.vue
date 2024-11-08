@@ -1,7 +1,7 @@
 <template>
-  <a-card class="general-card" :title="$t('userSetting.certification.title.enterprise')" :header-style="{ padding: '0px 20px 16px 20px' }">
+  <a-card class="general-card" :title="'userSetting.certification.title.enterprise'" :header-style="{ padding: '0px 20px 16px 20px' }">
     <template #extra>
-      <a-link>{{ $t('userSetting.certification.extra.enterprise') }}</a-link>
+      <a-link>{{ 'userSetting.certification.extra.enterprise' }}</a-link>
     </template>
     <a-descriptions
       class="card-content"
@@ -16,7 +16,7 @@
         textAlign: 'left',
       }"
     >
-      <template #label="{ label }">{{ $t(label) }} :</template>
+      <template #label="{ label }">{{ label) }} :</template>
       <template #value="{ value, data }">
         <a-tag v-if="data.label === 'userSetting.certification.label.status'" color="green" size="small">已认证</a-tag>
         <span v-else>{{ value }}</span>
@@ -26,9 +26,9 @@
 </template>
 
 <script lang="ts" setup>
-import { PropType, computed } from 'vue'
-import { EnterpriseCertificationModel } from '@/api/user-center'
-import type { DescData } from '@arco-design/web-vue/es/descriptions/interface'
+import { EnterpriseCertificationModel } from '@/api/user-center';
+import type { DescData } from '@arco-design/web-vue/es/descriptions/interface';
+import { PropType, computed } from 'vue';
 
 const props = defineProps({
   enterpriseInfo: {

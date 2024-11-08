@@ -1,7 +1,7 @@
 <template>
-  <a-card class="general-card" :title="$t('userInfo.title.myProject')">
+  <a-card class="general-card" :title="'userInfo.title.myProject'">
     <template #extra>
-      <a-link>{{ $t('userInfo.showMore') }}</a-link>
+      <a-link>{{ 'userInfo.showMore' }}</a-link>
     </template>
     <a-row :gutter="16">
       <a-col
@@ -41,8 +41,8 @@
 </template>
 
 <script lang="ts" setup>
-import { queryMyProjectList, MyProjectRecord } from '@/api/user-center'
-import useRequest from '@/hooks/request'
+import { MyProjectRecord, queryMyProjectList } from '@/api/user-center';
+import useRequest from '@/hooks/request';
 
 const defaultValue = Array(6).fill({} as MyProjectRecord)
 const { loading, response: projectList } = useRequest<MyProjectRecord[]>(queryMyProjectList, defaultValue)
